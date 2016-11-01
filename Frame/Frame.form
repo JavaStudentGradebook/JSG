@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="1" max="32767" attributes="0"/>
+          <Component id="FordhamGradebook" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="FordhamGradebook" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+    <Container class="javax.swing.JTabbedPane" name="FordhamGradebook">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -52,13 +52,14 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ChooseClass" alignment="0" pref="256" max="32767" attributes="0"/>
-                          <Component id="ArchivedClass" alignment="0" pref="256" max="32767" attributes="0"/>
+                          <Component id="ArchivedClass" max="32767" attributes="0"/>
+                          <Component id="ChooseAClass" pref="291" max="32767" attributes="0"/>
+                          <Component id="jLabel1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="LogOut" pref="256" max="32767" attributes="0"/>
-                          <Component id="AddClass" pref="256" max="32767" attributes="0"/>
+                          <Component id="LogOut" pref="397" max="32767" attributes="0"/>
+                          <Component id="AddClass" pref="397" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                   </Group>
@@ -68,9 +69,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ChooseClass" alignment="3" pref="70" max="32767" attributes="0"/>
-                          <Component id="AddClass" alignment="3" pref="70" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="AddClass" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="ChooseAClass" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -83,11 +88,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="ChooseClass">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Choose A Class"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="ArchivedClass">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Archived Classes"/>
@@ -104,6 +104,28 @@
             <Component class="javax.swing.JButton" name="LogOut">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Log Out"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="ChooseAClass">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="CS1"/>
+                    <StringItem index="1" value="CS2"/>
+                    <StringItem index="2" value="Software Engineering"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChooseAClassActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Choose A Class:"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -129,7 +151,10 @@
                               <Component id="AddStudent" min="-2" pref="181" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" pref="922" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="GradebookScrollPane" pref="1058" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -143,7 +168,7 @@
                           <Component id="AddStudent" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="312" max="-2" attributes="0"/>
+                      <Component id="GradebookScrollPane" min="-2" pref="312" max="-2" attributes="0"/>
                       <EmptySpace pref="119" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -154,6 +179,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Assignment"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddAssignmentActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="AddStudent">
               <Properties>
@@ -163,7 +191,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddStudentActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+            <Container class="javax.swing.JScrollPane" name="GradebookScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -173,7 +201,7 @@
                 <Component class="javax.swing.JTable" name="ClassTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="7">
+                      <Table columnCount="4" rowCount="2">
                         <Column editable="true" title="Student Name" type="java.lang.Object"/>
                         <Column editable="true" title="Quiz1" type="java.lang.Object"/>
                         <Column editable="true" title="Homework1" type="java.lang.Object"/>
@@ -226,15 +254,62 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="934" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="1042" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="540" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="402" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="8">
+                        <Column editable="true" title="Student Name" type="java.lang.Object"/>
+                        <Column editable="true" title="Days Missed" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="rowHeight" type="int" value="50"/>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Statistics">
           <Constraints>
@@ -248,7 +323,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="934" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1110" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -275,7 +350,7 @@
                       <Component id="ManageGradingSchemes" min="-2" pref="335" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="DropClass" min="-2" pref="335" max="-2" attributes="0"/>
-                      <EmptySpace pref="123" max="32767" attributes="0"/>
+                      <EmptySpace pref="299" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -297,11 +372,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Manage Grading Schemes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ManageGradingSchemesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="DropClass">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Drop Class"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DropClassActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
